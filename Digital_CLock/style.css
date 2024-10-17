@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+@font-face {
+    font-family: digital-7;
+    src: url(digital-7.ttf);
+}
+
+:root {
+    --light-color: #FFC312;
+    --primary-bg: #2E236C;
+    --frame-bg: #B692C2;
+    --text-color: #E2BFD9;
+    --clock-text-color: #FFFFFF;
+    --clock-bg-blur: rgba(255, 99, 0, 0.7);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-bg);
+    background-image: url('clock.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 50px;
+    font-weight: 500;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.frame {
+    width: 600px;
+    height: 300px;
+    background-color: var(--frame-bg);
+    border: 50px solid var(--primary-bg);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    font-family: digital-7;
+    color: var(--clock-text-color);
+    font-size: 80px;
+    text-shadow: 0 0 20px var(--light-color);
+    position: relative;
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--clock-bg-blur);
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    filter: blur(30px);
+}
